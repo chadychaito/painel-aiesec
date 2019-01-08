@@ -38,3 +38,5 @@ Route::get('/cadastrar-pontos-atrativos', function(){
 });
 Route::post('/store-pontos-atrativos', 'PontosController@store');
 Route::get('/listar-pontos-atrativos', 'PontosController@show');
+Route::get('/editar-pontos-atrativos', 'PontosController@edit');
+Route::post('/update-pontos-atrativos', 'PontosController@update');

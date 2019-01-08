@@ -84,7 +84,7 @@
                     </li>
                     <li><a href="cadastrar-ongs">Cadastrar ONGs</a>
                     </li>
-                    <li><a href="cadastrar-pontos">Cadastrar Pontos Turísticos</a>
+                    <li><a href="cadastrar-pontos-atrativos">Cadastrar Pontos Atrativos</a>
                     </li>
                   </ul>
                 </li>
@@ -96,7 +96,7 @@
                     </li>
                     <li><a href="cadastrar-ongs">Cadastrar ONGs</a>
                     </li>
-                    <li><a href="cadastrar-pontos">Cadastrar Pontos Turísticos</a>
+                    <li><a href="listar-pontos-atrativos">Listar Pontos Atrativos</a>
                     </li>
                   </ul>
                 </li>

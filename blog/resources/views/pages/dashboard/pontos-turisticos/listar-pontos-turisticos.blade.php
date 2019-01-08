@@ -51,12 +51,12 @@
               <div class="col-md-4">
                 <div class="thumbnail">
                   <div class="image view view-first">
-                    <img style="width: 100%; display: block;" src="storage/pontos/{{$ponto_atrativo->nome}}.jpeg" alt="{{$ponto_atrativo->nome}}" />
+                    <img style="width: 100%; display: block;" src="storage/pontos/{{$ponto_atrativo->id}}.jpeg" alt="{{$ponto_atrativo->nome}}" />
                     <div class="mask">
                       <p>{{$ponto_atrativo->nome}}</p>
                       <div class="tools tools-bottom">
                         <a href="#"><i class="fa fa-link"></i></a>
-                        <a href="#"><i class="fa fa-pencil"></i></a>
+                        <a href="/editar-pontos-atrativos?id={{$ponto_atrativo->id}}"><i class="fa fa-pencil"></i></a>
                         <a href="#"><i class="fa fa-times"></i></a>
                       </div>
                     </div>
