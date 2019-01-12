@@ -38,18 +38,22 @@ class IntercambistaController extends Controller
      */
     public function store(Request $request)
     {
-        $result = DB::insert("INSERT INTO `intercambistas`(`passaporte`, `nome`, `sexo`, `data_nasc`, `telefone`, `stats`, `buddy`, `host`, `projeto`, `data_inicio`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? , ?)", 
-                            [ 
-                            $request->input('numPassaporte'),
-                            $request->input('nomeCompleto'),
-                            $request->input('sexo'), 
-                            $request->input('dataNascimento'),
-                            $request->input('numTelefone'),
-                            $request->input('status'),
-                            $request->input('buddy'),
-                            $request->input('nomeHost'),
-                            $request->input('projeto'),
-                            $request->input('dataInicio')]);
+
+        $data = [
+            'passaporte' => request('numPassaporte'),
+            'nome' => request('nomeCompleto'),
+            'sexo' => request('sexo'), 
+            'data_nasc' => request('dataNascimento'),
+            'telefone' => request('numTelefone'),
+            'stats' => request('status'),
+            'buddy' => request('buddy'),
+            'host' => request('nomeHost'),
+            'projeto' => request('projeto'),
+            'data_inicio' => request('dataInicio'),
+        ];
+        
+        /* Criando um Model Intercambista com os dados */ //Ja insere no BD
+        Intercambista::create($data);
 
         return back();
     }
@@ -75,7 +79,7 @@ class IntercambistaController extends Controller
     {
         $num_passaporte = Input::get('num_pass');
 
-        $intercambista = DB::table('intercambistas')->where('passaporte', '=', $num_passaporte)->first();
+        $intercambista = Intercambista::where('passaporte', '=', $num_passaporte)->first();
         
         return view('pages.dashboard.intercambistas.editar-intercambista', compact('intercambista'));
     }
@@ -91,7 +95,7 @@ class IntercambistaController extends Controller
     {
         $num_passaporte = Input::get('num_pass');
 
-        $update_nome = DB::table('intercambistas')->where('passaporte', $num_passaporte)->update(['nome' => $request->input('nomeCompleto')]);
+        $update_nome = Intercambista::where('passaporte', $num_passaporte)->update(['nome' => $request->input('nomeCompleto')]);
     
         return back();
     }
@@ -106,7 +110,8 @@ class IntercambistaController extends Controller
     {
         $num_passaporte = Input::get('num_pass');
         
-        $intercambista = DB::table('intercambistas')->where('passaporte', $num_passaporte)->delete();
+        $intercambista =Intercambista::where('passaporte', $num_passaporte)->delete();
+        
         return back();
     }
 }

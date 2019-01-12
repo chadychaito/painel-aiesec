@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use App\Atrativo;
 
-class PontosController extends Controller
+use App\Projeto;
+
+class ProjetoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,38 +37,14 @@ class PontosController extends Controller
      */
     public function store(Request $request)
     {
-
-        // Agrupa os dados
         $data = [
+            'cnpj' => request('cnpj'),
             'nome' => request('nome'),
-            'descricao' => request('descricao-ponto'), 
-            'endereco' => request('endereco'),
+            'descricao' => request('descricao'),
         ];
-        
-        //Cria um MODEL atrativo com os dados
-        $ponto_atrativo = Atrativo::create($data);
-        
-        /* Verifica se informou o arquivo e se é válido */
-		if ($request->hasFile('image') && $request->file('image')->isValid()) {
-			 
-			// Recupera a extensão do arquivo
-			$extension = $request->image->extension();
-	 
-			// Define finalmente o nome como sendo o ID.EXTENSÃO 
-			$nameFile = "{$ponto_atrativo->id}.{$extension}";
-	 
-			// Faz o upload na pasta storage/public/pontos
-			$upload = $request->image->storeAs('pontos', $nameFile);
-	 
-			// Verifica se NÃO deu certo o upload (Redireciona de volta)
-			if ( !$upload )
-				return redirect()
-							->back()
-							->with('error', 'Falha ao fazer upload')
-							->withInput();
-	 
-        }
-        
+
+        Projeto::create($data);
+
         return back();
     }
 
@@ -80,8 +56,9 @@ class PontosController extends Controller
      */
     public function show()
     {
-        $pontos_atrativos = Atrativo::get();
-        return view ('pages.dashboard.pontos-turisticos.listar-pontos-turisticos', compact('pontos_atrativos'));
+        $projetos = Projeto::get();
+        
+        return view('pages.dashboard.projetos.listar-projeto', compact('projetos'));
     }
 
     /**
@@ -94,9 +71,9 @@ class PontosController extends Controller
     {
         $id = Input::get('id');
 
-        $ponto_atrativo = Atrativo::where('id', $id)->first();
+        $projeto = Projeto::where('id', $id)->first();
         
-        return view('pages.dashboard.pontos-turisticos.editar-pontos-turisticos', compact('ponto_atrativo'));
+        return view('pages.dashboard.projetos.editar-projeto', compact('projeto'));
     }
 
     /**
@@ -110,8 +87,8 @@ class PontosController extends Controller
     {
         $id = Input::get('id');
 
-        $update_nome = Atrativo::where('id', '=', $id)->update(['nome' => $request->input('nome')]);
-        
+        Projeto::where('id', $id)->update(['cnpj' => request('cnpj'), 'nome' => request('nome'), 'descricao' => request('descricao')]);
+
         return back();
     }
 
@@ -125,7 +102,7 @@ class PontosController extends Controller
     {
         $id = Input::get('id');
 
-        $intercambista = Atrativo::where('id', $id)->delete();
+        Projeto::where('id', $id)->delete();
         
         return back();
     }

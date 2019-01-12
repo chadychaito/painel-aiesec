@@ -49,56 +49,38 @@
             <table id="datatable" class="table table-striped table-bordered">
               <thead>
                 <tr>
-                  <th>Nome</th>
-                  <th>Nº Passaporte</th>
-                  <th>Sexo</th>
-                  <th>Data Nascimento</th>
-                  <th>Telefone</th>
-                  <th>Buddy</th>
-                  <th>Host</th>
-                  <th>Projeto</th>
-                  <th>Data Inicio</th>
-                  <th>Status</th>
+                  <th>ID</th>
+                  <th>Pergunta</th>
+                  <th>Resposta</th>
                   <th>#</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach ($intercambistas as $intercambista)
+                @foreach ($faqs as $faq)
                 <tr>
-                  <td>{{$intercambista->nome}}</td>
-                  <td>{{$intercambista->passaporte}}</td>
-                  @if($intercambista->sexo === 'f')
-                    <td>Feminino</td>
-                  @else
-                    <td>Masculino</td>
-                  @endif
-                  <td>{{$intercambista->data_nasc}}</td>
-                  <td>{{$intercambista->telefone}}</td>
-                  <td>{{$intercambista->buddy}}</td>
-                  <td>{{$intercambista->host}}</td>
-                  <td>{{$intercambista->projeto}}</td>
-                  <td>{{$intercambista->data_inicio}}</td>
-                  <td>{{$intercambista->stats}}</td>
+                  <td>{{$faq->id}}</td>
+                  <td>{{$faq->pergunta}}</td>
+                  <td>{{$faq->resposta}}</td>
                   <td>
-                    <a href="/editar-intercambista?num_pass={{$intercambista->passaporte}}" title="Editar Intercambista"><i class="fa fa-wrench"></i></a>
-                    <a data-toggle="modal" data-target="#confirmarExcluirIntercambista"  title="Excluir Intercambista"><i class="fa fa-times"></i></a>
+                    <a href="/editar-faq?id={{$faq->id}}" title="Editar Intercambista"><i class="fa fa-wrench"></i></a>
+                    <a data-toggle="modal" data-target="#confirmarExcluirFaq"  title="Excluir Intercambista"><i class="fa fa-times"></i></a>
                     <!-- Modal -->
-                    <div class="modal fade" id="confirmarExcluirIntercambista" tabindex="-1" role="dialog" aria-labelledby="confirmarExcluirModalTitle" aria-hidden="true">
+                    <div class="modal fade" id="confirmarExcluirFaq" tabindex="-1" role="dialog" aria-labelledby="confirmarExcluirModalTitle" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="confirmarExcluirIntercambistaTitle">
-                              Excluir Intercambista</h5>
+                            <h5 class="modal-title" id="confirmarExcluirFaqTitle">
+                              Excluir Pergunta Frequente</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
                           <div class="modal-body">
-                            Você deseja mesmo excluir o(a) intercambista: <b>{{$intercambista->nome}}</b>
+                            Você deseja mesmo excluir a pergunta frenquente com ID: <b>{{$faq->id}}</b>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <a href="/remover-intercambista?num_pass={{$intercambista->passaporte}}">
+                            <a href="/remover-faq?id={{$faq->id}}">
                               <button type="button" class="btn btn-danger">Excluir</button>
                             </a>
                           </div>

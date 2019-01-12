@@ -13,21 +13,21 @@
 
   <!-- Bootstrap core CSS -->
 
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-  <link href="../fonts/css/font-awesome.min.css" rel="stylesheet">
-  <link href="../css/animate.min.css" rel="stylesheet">
+  <link href="fonts/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/animate.min.css" rel="stylesheet">
 
   <!-- Custom styling plus plugins -->
-  <link href="../css/custom.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
   <link href="css/icheck/flat/green.css" rel="stylesheet">
   <!-- ion_range -->
-  <link rel="stylesheet" href="../css/normalize.css" />
-  <link rel="stylesheet" href="../css/ion.rangeSlider.css" />
-  <link rel="stylesheet" href="../css/ion.rangeSlider.skinFlat.css" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/ion.rangeSlider.css" />
+  <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
 
   <!-- colorpicker -->
-  <link href="../css/colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet">
+  <link href="css/colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet">
 
   <script src="js/jquery.min.js"></script>
 
@@ -50,12 +50,12 @@
       <div class="page-title">
         <div class="title_left">
           <h3>
-            Cadastrar Pontos Turisticos
+            Cadastrar Perguntas Frequentes
           </h3>
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Cadastrar Pontos Turisticos</li>
+              <li class="breadcrumb-item active" aria-current="page">Cadastrar Perguntas Frequentes</li>
             </ol>
           </nav>
         </div>
@@ -76,7 +76,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="x_panel">
             <div class="x_title">
-              <h2>Pontos Turisticos</h2>
+              <h2>Perguntas Frequentes</h2>
               <ul class="nav navbar-right panel_toolbox">
                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                 </li>
@@ -96,40 +96,22 @@
             </div>
             <div class="x_content">
               <br />
-              <form class="form-horizontal form-label-left" method="POST" action="{{URL::to('/update-pontos-atrativos')}}?id={{$ponto_atrativo->id}}" enctype="multipart/form-data">
-                <h5 class="text-uppercase text-center">Dados Pontos Turisticos</h5>
+              <form class="form-horizontal form-label-left" method="POST" action="{{URL::to('/update-faq')}}?id={{$faq->id}}">
+                <h5 class="text-uppercase text-center">Dados Perguntas Frequentes</h5>
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nome">Nome<span class="required">*</span>
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="pergunta-faq">Pergunta <span class="required">*</span>
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" id="nome" required="required" class="form-control col-md-7 col-xs-12" name="nome"  maxlength = "100" value="{{$ponto_atrativo->nome}}">
+                    <textarea class="form-control" id="pergunta-faq" name="pergunta-faq" rows="1">{{$faq->pergunta}}</textarea>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="endereco">Endereço<span class="required">*</span>
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="resposta-faq">Resposta <span class="required">*</span>
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" id="endereco" required="required" class="form-control col-md-7 col-xs-12" name="endereco" maxlength = "100" value="{{$ponto_atrativo->endereco}}">
+                    <textarea class="form-control" id="resposta-faq" name="resposta-faq" rows="1">{{$faq->resposta}}</textarea>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="descricao-ponto">Descrição <span class="required">*</span>
-                  </label>
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-                    <textarea class="form-control" id="descricao-ponto" name="descricao-ponto" rows="3" >{{$ponto_atrativo->descricao}}</textarea>
-                  </div>
-                </div>
-                
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="image">Imagem <span class="required">*</span>
-                  </label>
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="form-group">
-                      <input type="file" class="form-control-file" id="image" name="image">
-                    </div>
-                  </div>
-                </div>
-                
                 <div class="ln_solid"></div>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="form-group">

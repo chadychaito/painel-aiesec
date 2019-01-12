@@ -50,7 +50,7 @@
         <div class="left_col scroll-view">
 
           <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
+            <a href="index" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
           </div>
           <div class="clearfix"></div>
 
@@ -82,7 +82,13 @@
                     </li>
                     <li><a href="cadastrar-buddies">Cadastrar Buddies</a>
                     </li>
+                    <li><a href="cadastrar-hosts">Cadastrar Hosts</a>
+                    </li>
                     <li><a href="cadastrar-ongs">Cadastrar ONGs</a>
+                    </li>
+                    <li><a href="cadastrar-projetos">Cadastrar Projetos</a>
+                    </li>
+                    <li><a href="cadastrar-faq">Cadastrar FAQ</a>
                     </li>
                     <li><a href="cadastrar-pontos-atrativos">Cadastrar Pontos Atrativos</a>
                     </li>
@@ -94,7 +100,11 @@
                     </li>
                     <li><a href="cadastrar-buddies">Cadastrar Buddies</a>
                     </li>
-                    <li><a href="cadastrar-ongs">Cadastrar ONGs</a>
+                    <li><a href="listar-ongs">Listar ONGs</a>
+                    </li>
+                    <li><a href="listar-projetos">Listar Projetos</a>
+                    </li>
+                    <li><a href="listar-faq">Listar FAQ</a>
                     </li>
                     <li><a href="listar-pontos-atrativos">Listar Pontos Atrativos</a>
                     </li>

@@ -53,32 +53,16 @@
                   <th>Nº Passaporte</th>
                   <th>Sexo</th>
                   <th>Data Nascimento</th>
-                  <th>Telefone</th>
-                  <th>Buddy</th>
-                  <th>Host</th>
-                  <th>Projeto</th>
-                  <th>Data Inicio</th>
-                  <th>Status</th>
                   <th>#</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach ($intercambistas as $intercambista)
+                @foreach ($hosts as $host)
                 <tr>
-                  <td>{{$intercambista->nome}}</td>
+                  <td>{{$host->cpf}}</td>
                   <td>{{$intercambista->passaporte}}</td>
-                  @if($intercambista->sexo === 'f')
-                    <td>Feminino</td>
-                  @else
-                    <td>Masculino</td>
-                  @endif
                   <td>{{$intercambista->data_nasc}}</td>
                   <td>{{$intercambista->telefone}}</td>
-                  <td>{{$intercambista->buddy}}</td>
-                  <td>{{$intercambista->host}}</td>
-                  <td>{{$intercambista->projeto}}</td>
-                  <td>{{$intercambista->data_inicio}}</td>
-                  <td>{{$intercambista->stats}}</td>
                   <td>
                     <a href="/editar-intercambista?num_pass={{$intercambista->passaporte}}" title="Editar Intercambista"><i class="fa fa-wrench"></i></a>
                     <a data-toggle="modal" data-target="#confirmarExcluirIntercambista"  title="Excluir Intercambista"><i class="fa fa-times"></i></a>

@@ -3852,6 +3852,18 @@ ul.project_files li a i {
   padding: 9px 5px;
   background: #F7F7F7;
 }
+
+.caption .endereco{
+  font-weight: bold;
+}
+
+.caption .descricao{
+  max-width: 50ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .caption p {
   margin-bottom: 5px;
 }
