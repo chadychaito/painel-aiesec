@@ -12,13 +12,9 @@
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PrincipalController@index')->middleware('auth');
 
-Route::get('/index', function () {
-    return view('index');
-});
+Route::get('/index', 'PrincipalController@index')->middleware('auth');
 
 /* Rotas Autenticação */
 Auth::routes();
@@ -60,7 +56,9 @@ Route::get('/cadastrar-hosts', function(){
 });
 Route::post('/store-hosts', 'HostController@store');
 Route::get('/listar-hosts', 'HostController@show');
-
+Route::get('/editar-hosts', 'HostController@edit');
+Route::post('/update-hosts', 'HostController@update');
+Route::get('/remover-hosts', 'HostController@destroy');
 
 /* Ongs */
 Route::get('/cadastrar-ongs', function(){
@@ -81,3 +79,14 @@ Route::get('/listar-projetos', 'ProjetoController@show');
 Route::get('/editar-projetos', 'ProjetoController@edit');
 Route::post('/update-projetos', 'ProjetoController@update');
 Route::get('/remover-projetos', 'ProjetoController@destroy');
+
+
+/* Buddies */
+Route::get('/cadastrar-buddies', function(){
+    return view('pages.dashboard.buddies.form-buddy');
+});
+Route::post('/store-buddies', 'BuddyController@store');
+Route::get('/listar-buddies', 'BuddyController@show');
+Route::get('/editar-buddies', 'BuddyController@edit');
+Route::post('/update-buddies', 'BuddyController@update');
+Route::get('/remover-buddies', 'BuddyController@destroy');

@@ -7,12 +7,11 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
 
 use App\Endereco;
-use App\Host;
+use App\Buddy;
 
-
-class HostController extends Controller
+class BuddyController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -48,12 +47,12 @@ class HostController extends Controller
         ];
         $endereco = Endereco::create($data_end);
 
-        /* Criando Host */
-        $data_host = [
+        /* Criando Buddy */
+        $data_buddy = [
             'cpf' => request('cpf'),
             'id_endereco' => $endereco->id, 
         ];
-        Host::create($data_host);
+        Buddy::create($data_buddy);
         
         return back();
     }
@@ -67,9 +66,9 @@ class HostController extends Controller
     public function show()
     {
         /* Pega todos os Hosts e faz Join com a tabela de Endereços*/
-       $hosts_join = DB::table('hosts')->join('enderecos', 'hosts.id_endereco', '=', 'enderecos.id')->get();
+        $buddys_join = DB::table('buddys')->join('enderecos', 'buddys.id_endereco', '=', 'enderecos.id')->get();
 
-        return view('pages.dashboard.hosts.listar-host', compact('hosts_join'));
+        return view('pages.dashboard.buddies.listar-buddy', compact('buddys_join'));
     }
 
     /**
@@ -80,12 +79,12 @@ class HostController extends Controller
      */
     public function edit()
     {
-        $id_host = Input::get('id');
+        $id_buddy = Input::get('id');
 
-        $host = Host::where('id_host', $id_host)->first();
-        $endereco = Endereco::where('id', $host->id_endereco)->first();
+        $buddy = Buddy::where('id_buddy', $id_buddy)->first();
+        $endereco = Endereco::where('id', $buddy->id_endereco)->first();
 
-        return view('pages.dashboard.hosts.editar-host', compact('host', 'endereco'));
+        return view('pages.dashboard.buddies.editar-buddy', compact('buddy', 'endereco'));
     }
 
     /**
@@ -97,14 +96,14 @@ class HostController extends Controller
      */
     public function update(Request $request)
     {
-        $id_host = Input::get('id');
+        $id_buddy = Input::get('id');
 
         /* Auxiliar para conseguir acessar o id_endereco */
-        $host_aux = Host::where('id_host', $id_host)->first();
+        $buddy_aux = Buddy::where('id_buddy', $id_buddy)->first();
         
-        $host = Host::where('id_host', $host_aux->id_host)->update(['cpf' => request('cpf')]);
+        $buddy = Buddy::where('id_buddy', $buddy_aux->id_buddy)->update(['cpf' => request('cpf')]);
         
-        $endereco = Endereco::where('id', $host_aux->id_endereco)->update(['logradouro' => request('logradouro'), 'numero' => request('numero'), 'complemento' => request('complemento')]);
+        $endereco = Endereco::where('id', $buddy_aux->id_endereco)->update(['logradouro' => request('logradouro'), 'numero' => request('numero'), 'complemento' => request('complemento')]);
 
         return back();
     }
@@ -117,13 +116,13 @@ class HostController extends Controller
      */
     public function destroy()
     {
-        $id_host = Input::get('id');
+        $id_buddy = Input::get('id');
         
-        $host = Host::where('id_host', $id_host)->first();
+        $buddy = Buddy::where('id_buddy', $id_buddy)->first();
 
-        $destroy_end = Endereco::where('id', $host->id_endereco)->delete();
+        $destroy_end = Endereco::where('id', $buddy->id_endereco)->delete();
 
-        $destroy_host = $host->delete();
+        $destroy_buddy = $buddy->delete();
 
         return back();
     }

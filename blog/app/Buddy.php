@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Host extends Model
+class Buddy extends Model
 {
-    protected $table = 'hosts';
+    protected $table = 'buddys';
     public $timestamps = false;
     protected $fillable = array('cpf', 'id_endereco');
-    protected $primaryKey = 'id_host';
+    protected $primaryKey = 'id_buddy';
 }

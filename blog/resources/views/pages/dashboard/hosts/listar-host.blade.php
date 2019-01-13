@@ -49,40 +49,36 @@
             <table id="datatable" class="table table-striped table-bordered">
               <thead>
                 <tr>
-                  <th>Nome</th>
-                  <th>Nº Passaporte</th>
-                  <th>Sexo</th>
-                  <th>Data Nascimento</th>
+                  <th>CPF</th>
+                  <th>Endereço</th>
                   <th>#</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach ($hosts as $host)
+                @foreach ($hosts_join as $host_join)
                 <tr>
-                  <td>{{$host->cpf}}</td>
-                  <td>{{$intercambista->passaporte}}</td>
-                  <td>{{$intercambista->data_nasc}}</td>
-                  <td>{{$intercambista->telefone}}</td>
+                  <td>{{$host_join->cpf}}</td>
+                  <td>{{$host_join->logradouro}}, {{$host_join->numero}} - {{$host_join->complemento}}</td>
                   <td>
-                    <a href="/editar-intercambista?num_pass={{$intercambista->passaporte}}" title="Editar Intercambista"><i class="fa fa-wrench"></i></a>
-                    <a data-toggle="modal" data-target="#confirmarExcluirIntercambista"  title="Excluir Intercambista"><i class="fa fa-times"></i></a>
+                    <a href="/editar-hosts?id={{$host_join->id_host}}" title="Editar Host"><i class="fa fa-wrench"></i></a>
+                    <a data-toggle="modal" data-target="#confirmarExcluirhost"  title="Excluir Host"><i class="fa fa-times"></i></a>
                     <!-- Modal -->
-                    <div class="modal fade" id="confirmarExcluirIntercambista" tabindex="-1" role="dialog" aria-labelledby="confirmarExcluirModalTitle" aria-hidden="true">
+                    <div class="modal fade" id="confirmarExcluirhost" tabindex="-1" role="dialog" aria-labelledby="confirmarExcluirModalTitle" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="confirmarExcluirIntercambistaTitle">
-                              Excluir Intercambista</h5>
+                            <h5 class="modal-title" id="confirmarExcluirhostTitle">
+                              Excluir Host</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
                           <div class="modal-body">
-                            Você deseja mesmo excluir o(a) intercambista: <b>{{$intercambista->nome}}</b>
+                            Você deseja mesmo excluir o(a) host: <b>{{$host_join->cpf}}</b>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <a href="/remover-intercambista?num_pass={{$intercambista->passaporte}}">
+                            <a href="/remover-hosts?id={{$host_join->id_host}}">
                               <button type="button" class="btn btn-danger">Excluir</button>
                             </a>
                           </div>
