@@ -67,7 +67,8 @@ class IntercambistaController extends Controller
     public function show()
     {
         $intercambistas = Intercambista::get();
-        return view('pages.dashboard.intercambistas.listar-intercambista', compact('intercambistas'));
+        $count = count($intercambistas);
+        return view('pages.dashboard.intercambistas.listar-intercambista', compact('intercambistas', 'count'));
     }
 
     /**

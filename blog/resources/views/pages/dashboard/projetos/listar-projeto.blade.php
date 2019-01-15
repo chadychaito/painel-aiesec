@@ -6,7 +6,7 @@
   <div class="">
     <div class="page-title">
       <div class="title_left">
-        <h3>Lista de Intercambistas</h3>
+        <h3>Lista de Projetos</h3>
       </div>
 
       <div class="title_right">
@@ -27,7 +27,7 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Intercambistas Cadastrados</h2>
+            <h2>Projetos Cadastrados</h2>
             <ul class="nav navbar-right panel_toolbox">
               <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
               </li>

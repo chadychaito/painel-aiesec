@@ -116,7 +116,7 @@
                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="descricao-ponto">Descrição <span class="required">*</span>
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
-                    <textarea class="form-control" id="descricao-ponto" name="descricao-ponto" rows="3"></textarea>
+                    <textarea class="form-control" id="descricao-ponto" name="descricao-ponto" rows="3" cols="264" maxlength="264"></textarea>
                   </div>
                 </div>
                 

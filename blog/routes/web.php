@@ -12,9 +12,10 @@
 */
 
 
-Route::get('/', 'PrincipalController@index')->middleware('auth');
-
+/* Principal */
+Route::get('/', 'PrincipalController@home');
 Route::get('/index', 'PrincipalController@index')->middleware('auth');
+Route::get('/home', 'PrincipalController@home');
 
 /* Rotas Autenticação */
 Auth::routes();

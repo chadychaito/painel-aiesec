@@ -42,7 +42,29 @@ class OngController extends Controller
             'telefone' => request('telefone'),
         ];
 
-        Ong::create($data);
+        $ong = Ong::create($data);
+
+        /* Verifica se informou o arquivo e se é válido */
+		if ($request->hasFile('image') && $request->file('image')->isValid()) {
+			 
+			// Recupera a extensão do arquivo
+			$extension = $request->image->extension();
+	 
+			// Define finalmente o nome como sendo o ID.EXTENSÃO 
+			$nameFile = "{$ong->id}.{$extension}";
+	 
+			// Faz o upload na pasta storage/public/pontos
+			$upload = $request->image->storeAs('ongs', $nameFile);
+	 
+			// Verifica se NÃO deu certo o upload (Redireciona de volta)
+			if ( !$upload )
+				return redirect()
+							->back()
+							->with('error', 'Falha ao fazer upload')
+							->withInput();
+	 
+        }
+
 
         return back();
     }
@@ -87,7 +109,28 @@ class OngController extends Controller
         $id = Input::get('id');
 
         Ong::where('id', $id)->update(['cnpj' => request('cnpj'), 'nome' => request('nome'), 'telefone' => request('telefone')]);
-    
+
+        /* Verifica se informou o arquivo e se é válido */
+		if ($request->hasFile('image') && $request->file('image')->isValid()) {
+			 
+			// Recupera a extensão do arquivo
+			$extension = $request->image->extension();
+	 
+			// Define finalmente o nome como sendo o ID.EXTENSÃO 
+			$nameFile = "{$id}.{$extension}";
+	 
+			// Faz o upload na pasta storage/public/pontos
+			$upload = $request->image->storeAs('ongs', $nameFile);
+	 
+			// Verifica se NÃO deu certo o upload (Redireciona de volta)
+			if ( !$upload )
+				return redirect()
+							->back()
+							->with('error', 'Falha ao fazer upload')
+							->withInput();
+	 
+        }
+
         return back();
     }
 

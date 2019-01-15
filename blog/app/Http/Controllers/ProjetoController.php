@@ -43,7 +43,28 @@ class ProjetoController extends Controller
             'descricao' => request('descricao'),
         ];
 
-        Projeto::create($data);
+        $projeto = Projeto::create($data);
+
+        /* Verifica se informou o arquivo e se é válido */
+		if ($request->hasFile('image') && $request->file('image')->isValid()) {
+			 
+			// Recupera a extensão do arquivo
+			$extension = $request->image->extension();
+	 
+			// Define finalmente o nome como sendo o ID.EXTENSÃO 
+			$nameFile = "{$projeto->id}.{$extension}";
+	 
+			// Faz o upload na pasta storage/public/projeto
+			$upload = $request->image->storeAs('projetos', $nameFile);
+	 
+			// Verifica se NÃO deu certo o upload (Redireciona de volta)
+			if ( !$upload )
+				return redirect()
+							->back()
+							->with('error', 'Falha ao fazer upload')
+							->withInput();
+	 
+        }
 
         return back();
     }
@@ -88,6 +109,27 @@ class ProjetoController extends Controller
         $id = Input::get('id');
 
         Projeto::where('id', $id)->update(['cnpj' => request('cnpj'), 'nome' => request('nome'), 'descricao' => request('descricao')]);
+        
+        /* Verifica se informou o arquivo e se é válido */
+		if ($request->hasFile('image') && $request->file('image')->isValid()) {
+			 
+			// Recupera a extensão do arquivo
+			$extension = $request->image->extension();
+	 
+			// Define finalmente o nome como sendo o ID.EXTENSÃO 
+			$nameFile = "{$id}.{$extension}";
+	 
+			// Faz o upload na pasta storage/public/projeto
+			$upload = $request->image->storeAs('projetos', $nameFile);
+	 
+			// Verifica se NÃO deu certo o upload (Redireciona de volta)
+			if ( !$upload )
+				return redirect()
+							->back()
+							->with('error', 'Falha ao fazer upload')
+							->withInput();
+	 
+        }
 
         return back();
     }

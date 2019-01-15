@@ -556,10 +556,23 @@ ol {
 	z-index: -1;
 }
 
-.faq-list{
-	padding-left: 250px;
-	padding-right: 250px;
+.faq-list .card-header{
+	background: #bfdc64;
 }
+
+.card-header .btn{
+	font-size: 15px;
+	color: #000;
+}
+
+.card-header .btn:hover{
+	color: #000;
+}
+
+.faq-list{
+	font-size: 13px;
+}
+
 
 /*------------------
   Recipes Section
@@ -572,6 +585,13 @@ ol {
 .recipe {
 	position: relative;
 	margin-bottom: 30px;
+}
+
+.recipe img{
+	max-height: 300px;
+	min-height: 300px;
+	min-width: 350px;
+	max-width: 350px;
 }
 
 .recipe .recipe-info-warp {
@@ -589,6 +609,10 @@ ol {
 	position: relative;
 }
 
+.recipe-info .telefone{
+	font-size: 12px;
+}
+
 .recipe .recipe-info:after {
 	position: absolute;
 	content: "";
@@ -604,12 +628,15 @@ ol {
 
 .recipe .recipe-info h3 {
 	font-size: 15px;
+	font-weight: bold;
 	color: #fff;
 }
 
 .recipe .rating i {
 	font-size: 11px;
 }
+
+
 
 /*----------------------
   Bottom widget Section
@@ -631,10 +658,6 @@ ol {
 	width: 77px;
 	height: 77px;
 	float: left;
-}
-
-.sp-recipes-list .rl-info {
-	padding-left: 90px;
 }
 
 .sp-recipes-list .rl-info span {
@@ -664,6 +687,7 @@ ol {
 
 .sp-blog-item .blog-thubm img {
 	min-width: 100%;
+	max-height: 200px;
 }
 
 .sp-blog-item .blog-date {
@@ -697,6 +721,9 @@ ol {
 	padding: 48px 40px 45px;
 	background: #fff;
 	position: relative;
+	height: 300px;
+	overflow: hidden;
+	max-width: 264ch;
 }
 
 .sp-blog-item .blog-text h5 {
@@ -738,9 +765,16 @@ ol {
 	background: #fdc856;
 }
 
+.review-section h1{
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
 .review-item {
 	overflow: hidden;
 	background: #fff;
+	margin-bottom: 20px;
 }
 
 .review-item .review-thumb {
@@ -805,7 +839,6 @@ ol {
 }
 
 .review-item p {
-	padding-left: 55px;
 	margin-bottom: 0;
 	padding-top: 4px;
 }

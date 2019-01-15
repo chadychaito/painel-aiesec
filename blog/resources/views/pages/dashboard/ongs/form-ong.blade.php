@@ -96,7 +96,7 @@
             </div>
             <div class="x_content">
               <br />
-              <form class="form-horizontal form-label-left" method="POST" action="{{URL::to('/store-ongs')}}">
+              <form class="form-horizontal form-label-left" method="POST" action="{{URL::to('/store-ongs')}}" enctype="multipart/form-data">
                 <h5 class="text-uppercase text-center">Dados Organização</h5>
                 <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cnpj">CNPJ <span class="required">*</span>
@@ -117,6 +117,15 @@
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="text" id="telefone" required="required" class="form-control col-md-7 col-xs-12" name="telefone">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="image">Imagem <span class="required">*</span>
+                  </label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <input type="file" class="form-control-file" id="image" name="image">
+                    </div>
                   </div>
                 </div>
                 <div class="ln_solid"></div>

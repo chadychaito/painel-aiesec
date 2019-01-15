@@ -96,7 +96,7 @@
             </div>
             <div class="x_content">
               <br />
-              <form class="form-horizontal form-label-left" method="POST" action="{{URL::to('/store-projetos')}}">
+              <form class="form-horizontal form-label-left" method="POST" action="{{URL::to('/store-projetos')}}" enctype="multipart/form-data">
                 <h5 class="text-uppercase text-center">Dados Projeto</h5>
                 <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cnpj">CNPJ <span class="required">*</span>
@@ -116,7 +116,16 @@
                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="descricao">Descricao <span class="required">*</span>
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
-                  <textarea class="form-control" id="descricao" name="descricao" rows="2"></textarea>
+                  <textarea class="form-control" id="descricao" name="descricao" rows="2" cols="150" maxlength="150"></textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="image">Imagem <span class="required">*</span>
+                  </label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <input type="file" class="form-control-file" id="image" name="image">
+                    </div>
                   </div>
                 </div>
                 <div class="ln_solid"></div>

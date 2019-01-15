@@ -50,12 +50,12 @@
       <div class="page-title">
         <div class="title_left">
           <h3>
-            Cadastrar Projetos
+            Editar Projeto
           </h3>
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Cadastrar Projetos</li>
+              <li class="breadcrumb-item active" aria-current="page">Editar Projeto</li>
             </ol>
           </nav>
         </div>
@@ -76,7 +76,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="x_panel">
             <div class="x_title">
-              <h2>Projetos</h2>
+              <h2>Projeto</h2>
               <ul class="nav navbar-right panel_toolbox">
                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                 </li>
@@ -96,7 +96,7 @@
             </div>
             <div class="x_content">
               <br />
-              <form class="form-horizontal form-label-left" method="POST" action="{{URL::to('/update-projetos')}}?id={{$projeto->id}}">
+              <form class="form-horizontal form-label-left" method="POST" action="{{URL::to('/update-projetos')}}?id={{$projeto->id}}" enctype="multipart/form-data">
                 <h5 class="text-uppercase text-center">Dados Projeto</h5>
                 <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cnpj">CNPJ <span class="required">*</span>
@@ -116,7 +116,16 @@
                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="descricao">Descricao <span class="required">*</span>
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
-                  <textarea class="form-control" id="descricao" name="descricao" rows="2">{{$projeto->descricao}}</textarea>
+                  <textarea class="form-control" id="descricao" name="descricao" rows="2" cols="150" maxlength="150">{{$projeto->descricao}}</textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="image">Imagem <span class="required">*</span>
+                  </label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <input type="file" class="form-control-file" id="image" name="image">
+                    </div>
                   </div>
                 </div>
                 <div class="ln_solid"></div>
