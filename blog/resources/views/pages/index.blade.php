@@ -7,7 +7,7 @@
 	<meta name="description" content="Food Blog Web Template">
 	<meta name="keywords" content="food, unica, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->   
+	<!-- Favicon -->
 	<link href="img/favicon.ico" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
@@ -50,7 +50,7 @@
 		<div class="header-bottom">
 			<div class="container">
 				<a href="index.html" class="site-logo">
-					<img src="img/logo.png" alt="">
+					<img src="img/llogo.png" alt="">
 				</a>
 				<div class="nav-switch">
 					<i class="fa fa-bars"></i>
@@ -70,23 +70,23 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>	
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 	<!-- Hero section -->
 	<section id="home" class="hero-section">
 		<div class="hero-slider owl-carousel">
 			<div class="hero-slide-item set-bg" data-setbg="img/slider-bg-1.png">
 				<div class="hs-text">
-					<h2 class="hs-title-1"><span>Algums fotos da AIESEC TRABS VOLUNTARIOS</span></h2>
-					<h2 class="hs-title-2"><span>from the best chefs</span></h2>
-					<h2 class="hs-title-3"><span>for all the foodies</span></h2>
+					<h2 class="hs-title-1"><span>Conheça Sorocaba</span></h2>
+					<h2 class="hs-title-2"><span>tenha a sua experiência</span></h2>
+					<h2 class="hs-title-3"><span>melhor intercâmbio da sua vida</span></h2>
 				</div>
 			</div>
 			<div class="hero-slide-item set-bg" data-setbg="img/slider-bg-2.png">
 				<div class="hs-text">
-					<h2 class="hs-title-1"><span>Healthy Recipes</span></h2>
-					<h2 class="hs-title-2"><span>from the best chefs</span></h2>
-					<h2 class="hs-title-3"><span>for all the foodies</span></h2>
+					<h2 class="hs-title-1"><span>Conheça Sorocaba</span></h2>
+					<h2 class="hs-title-2"><span>tenha a sua experiência</span></h2>
+					<h2 class="hs-title-3"><span>melhor intercâmbio da sua vida</span></h2>
 				</div>
 			</div>
 		</div>
@@ -202,8 +202,8 @@
 					</div>
 					@endforeach
 				</div>
-			</div>		
-		</div>					
+			</div>
+		</div>
 	</section>
 
 
@@ -228,7 +228,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="footer-logo">
-						<img src="img/logo.png" alt="">
+						<img src="img/llogo.png" alt="">
 					</div>
 				</div>
 				<div class="col-lg-6 text-lg-right">
