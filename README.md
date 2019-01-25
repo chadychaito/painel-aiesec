@@ -18,14 +18,14 @@ os voluntários de Sorocaba e os intercâmbistas voluntários. Também era de in
 
 # Como executar o projeto?
 São necessários:
-[Composer](https://getcomposer.org/) 
-[Laravel](https://laravel.com/)
-[phpMyAdmin](https://www.phpmyadmin.net/)
-[php [7.2](http://php.net/downloads.php)
+- [Composer](https://getcomposer.org/) 
+- [Laravel](https://laravel.com/)
+- [phpMyAdmin](https://www.phpmyadmin.net/)
+- [php 7.2](http://php.net/downloads.php)
 
 #### Cronograma:
 
-|Início |Atividade |Objetivo | Status|
+|Início |Atividade |
 | ----------------------------------|:----------:|
 |**(4/10)**|Primeira reunião - conhecer as demandas do comitê local.|
 |**(11/10)**|Segunda reunião - concretizar os requisitos.|
