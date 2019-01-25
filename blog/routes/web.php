@@ -14,8 +14,9 @@
 
 /* Principal */
 Route::get('/', 'PrincipalController@home');
+Route::get('/blog', 'PrincipalController@home');
+Route::get('/home', 'PrincipalController@index')->middleware('auth');
 Route::get('/index', 'PrincipalController@index')->middleware('auth');
-Route::get('/home', 'PrincipalController@home');
 
 /* Rotas Autenticação */
 Auth::routes();

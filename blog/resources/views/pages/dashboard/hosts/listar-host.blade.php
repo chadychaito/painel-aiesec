@@ -49,16 +49,20 @@
             <table id="datatable" class="table table-striped table-bordered">
               <thead>
                 <tr>
+                  <th>Nome</th>
                   <th>CPF</th>
                   <th>Endereço</th>
+                  <th>Telefone</th>
                   <th>#</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach ($hosts_join as $host_join)
                 <tr>
+                  <td>{{$host_join->nome}}</td>
                   <td>{{$host_join->cpf}}</td>
                   <td>{{$host_join->logradouro}}, {{$host_join->numero}} - {{$host_join->complemento}}</td>
+                  <td>{{$host_join->telefone}}</td>
                   <td>
                     <a href="/editar-hosts?id={{$host_join->id_host}}" title="Editar Host"><i class="fa fa-wrench"></i></a>
                     <a data-toggle="modal" data-target="#confirmarExcluirhost"  title="Excluir Host"><i class="fa fa-times"></i></a>

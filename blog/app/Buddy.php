@@ -8,6 +8,6 @@ class Buddy extends Model
 {
     protected $table = 'buddys';
     public $timestamps = false;
-    protected $fillable = array('cpf', 'id_endereco');
+    protected $fillable = array('cpf', 'id_endereco', 'nome', 'telefone');
     protected $primaryKey = 'id_buddy';
 }

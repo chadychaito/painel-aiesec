@@ -49,11 +49,13 @@ class BuddyController extends Controller
 
         /* Criando Buddy */
         $data_buddy = [
+            'nome' => request('nomeCompleto'),
             'cpf' => request('cpf'),
             'id_endereco' => $endereco->id, 
+            'telefone' => request('telefone'),
         ];
         Buddy::create($data_buddy);
-        
+
         return back();
     }
 
@@ -101,7 +103,7 @@ class BuddyController extends Controller
         /* Auxiliar para conseguir acessar o id_endereco */
         $buddy_aux = Buddy::where('id_buddy', $id_buddy)->first();
         
-        $buddy = Buddy::where('id_buddy', $buddy_aux->id_buddy)->update(['cpf' => request('cpf')]);
+        $buddy = Buddy::where('id_buddy', $buddy_aux->id_buddy)->update(['cpf' => request('cpf'), 'nome' => request('nomeCompleto'), 'telefone' => request('telefone')]);
         
         $endereco = Endereco::where('id', $buddy_aux->id_endereco)->update(['logradouro' => request('logradouro'), 'numero' => request('numero'), 'complemento' => request('complemento')]);
 

@@ -50,8 +50,10 @@ class HostController extends Controller
 
         /* Criando Host */
         $data_host = [
+            'nome' => request('nomeCompleto'),
             'cpf' => request('cpf'),
             'id_endereco' => $endereco->id, 
+            'telefone' => request('telefone'),
         ];
         Host::create($data_host);
         
@@ -102,7 +104,7 @@ class HostController extends Controller
         /* Auxiliar para conseguir acessar o id_endereco */
         $host_aux = Host::where('id_host', $id_host)->first();
         
-        $host = Host::where('id_host', $host_aux->id_host)->update(['cpf' => request('cpf')]);
+        $host = Host::where('id_host', $host_aux->id_host)->update(['cpf' => request('cpf'), 'nome' => request('nomeCompleto'), 'telefone' => request('telefone')]);
         
         $endereco = Endereco::where('id', $host_aux->id_endereco)->update(['logradouro' => request('logradouro'), 'numero' => request('numero'), 'complemento' => request('complemento')]);
 

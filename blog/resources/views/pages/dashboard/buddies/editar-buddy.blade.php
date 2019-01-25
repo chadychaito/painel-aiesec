@@ -99,6 +99,13 @@
               <form class="form-horizontal form-label-left" method="POST" action="{{URL::to('/update-buddies')}}?id={{$buddy->id_buddy}}">
                 <h5 class="text-uppercase text-center">Dados Pessoais</h5>
                 <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nomeCompleto">Nome Completo <span class="required">*</span>
+                  </label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" id="nomeCompleto" required="required" class="form-control col-md-7 col-xs-12" name="nomeCompleto" value="{{$buddy->nome}}">
+                  </div>
+                </div>
+                <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cpf">CPF <span class="required">*</span>
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
@@ -116,6 +123,13 @@
                   </div>
                   <div class="col-md-2 col-sm-2 col-xs-12">
                     <input type="text" id="complemento" class="form-control col-md-7 col-xs-12" name="complemento" placeholder="Complemento" value="{{$endereco->complemento}}">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefone">Telefone <span class="required">*</span>
+                  </label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" id="telefone" required="required" class="form-control col-md-7 col-xs-12" name="telefone" data-inputmask="'mask' : '(99) 99999-9999'" value="{{$buddy->telefone}}">
                   </div>
                 </div>
                 <div class="ln_solid"></div>
