@@ -18,10 +18,10 @@ os voluntários de Sorocaba e os intercâmbistas voluntários. Também era de in
 
 # Como executar o projeto?
 São necessários:
-[Composer](https://getcomposer.org/) 
-[Laravel](https://laravel.com/)
-[phpMyAdmin](https://www.phpmyadmin.net/)
-[php [7.2](http://php.net/downloads.php)
+- [Composer](https://getcomposer.org/) 
+- [Laravel](https://laravel.com/)
+- [phpMyAdmin](https://www.phpmyadmin.net/)
+- [php 7.2](http://php.net/downloads.php)
 
 #### Cronograma:
 
