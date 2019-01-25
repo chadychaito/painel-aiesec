@@ -8,34 +8,48 @@ Trabalho da disciplina de TI para Sustentabilidade.
 - Renata Praisler - 746044 - [@RenataPraisler](https://github.com/RenataPraisler)
 - Thiago Borges da Silva - 613770 - [@bgsthiago](https://github.com/bgsthiago)
 
+#### Introdução:
+O trabalho consiste em criar uma aplicação, de forma voluntária, que satisfaça a necessidade de uma comunidade. Dentro deste tema, em contato com a AIESEC Sorocaba, inicialmente foi proposto pelos voluntários do comitê Sorocabano que façamos um sistema para agilizar a comunicação entre os voluntários de Sorocaba e os intercâmbistas voluntários. Também era de interesse que existisse um site promocional, como um blog, não ligado a instituição para que atraia os intercambistas até Sorocaba.
+
+
+#### Arquitetura do Sistema e requisitos minimos:
+- [php 7.2](https://secure.php.net/manual/pt_BR/install.windows.requirements.php)
+- [phpMyAdmin](https://docs.phpmyadmin.net/pt_BR/latest/require.html)
+- [Composer](https://getcomposer.org/doc/00-intro.md#system-requirements) 
+- [Laravel](https://laravel.com/docs/5.7/installation)
+
 
 #### Sobre a aplicação e sua realização:
-O trabalho consiste em criar uma aplicação, de forma voluntária, que satisfaça a necessidade de uma comunidade. Dentro deste tema,
-em contato com a AIESEC Sorocaba.
+
 No primeiro encontro, acertamos que as reuniões aconteceriam a cada 15 dias, entretanto, foi proposto pela AIESEC Sorocaba que fizessemos uma tarefa que não tinha estrutura de projeto, assim começamos a entrevista-los e descobrir quais eram as demandas específicas do time de gestão de voluntários.
-Foi proposto pelos voluntários do comitê Sorocabano que façamos um sistema para agilizar a comunicação entre
-os voluntários de Sorocaba e os intercâmbistas voluntários. Também era de interesse que existisse um site promocional, não ligado a instituição para que seja atrativos aos intercambistas virem até Sorocaba.
+A partir deste ponto os requisitos iniciais eram:
+* listar, cadastrar, editar e remover os pontos turísticos da região
+* listar, cadastrar, editar e remover perguntas frequentes
+* listar, cadastrar, editar e remover os intercambistas
+* listar, cadastrar, editar e remover os membros da AIESEC-So
+* listar, cadastrar, editar e remover as ONGs que mantém parceria com a AIESEC So
+* listar, cadastrar, editar e remover os projetos destas mesmas ONGs
+* listar, cadastrar, editar e remover os terceiros (Hosts e Buddies)
+* listar, cadastrar, editar e remover grupos para intercambistas
+* os intercambistas devem se comunicar através de seus grupos
+* o sistema possuirá 3 níveis de autenticação: Intercambista, Membro AIESEC e Administrador
+* o sistema deve possuir um blog público como homepage
+* o sistema deve conter um rankeamento das ONGs
+* os usuários poderão avaliar as ONGs
+* o blog deve listar pontos turísticos da região, FAQ, ONGs que mantém parceria e sua pontuação, projetos destas ONGs e fotos do instagram da AIESEC So.
 
-#### Conteúdo do Sistema:
+Após reuniões, os requisitos se tornaram:
+* listar, cadastrar, editar e remover os pontos turísticos da região
+* listar, cadastrar, editar e remover perguntas frequentes
+* listar, cadastrar, editar e remover os intercambistas
+* listar, cadastrar, editar e remover os membros da AIESEC-So
+* listar, cadastrar, editar e remover as ONGs que mantém parceria com a AIESEC So
+* listar, cadastrar, editar e remover os projetos destas mesmas ONGs
+* listar, cadastrar, editar e remover os terceiros (Hosts e Buddies)
+* o sistema possuirá 1 níveis de autenticação: Membro AIESEC
+* o sistema deve possuir um blog público como homepage
+* o blog deve listar pontos turísticos da região, FAQ, ONGs que mantém parceria e projetos destas ONGs.
 
-##### BLOG
-* pontos turisticos da região
-* custo de vida
-* FAQ
-* compartilhamento de experiência
-* ONGs disponíveis em Sorocaba
-
-##### PAINEL
-* Login
-* CRUD de Intercambistas, ONGs, Terceiros (Hosts e Buddies) e Projeto
-* CRUD para o FAQ
-
-# Como executar o projeto?
-São necessários:
-- [Composer](https://getcomposer.org/) 
-- [Laravel](https://laravel.com/)
-- [phpMyAdmin](https://www.phpmyadmin.net/)
-- [php 7.2](http://php.net/downloads.php)
 
 #### Cronograma:
 
@@ -54,3 +68,6 @@ São necessários:
 |**(18/01)**|Treinamento com alguns membros da AIESEC|
 |**(20/01)**|Gravação do vídeo com o cliente|
 
+#### Conclusão
+A idealização do sistema foi interessante para os membros do grupo, pois buscamos uma tecnologia nova (Laravel), que não conheciamos e aprendemos sua arquiteura. A interação com o cliente foi interessante, apesar das adversidades, como a troca de gestão do comitê local da AIESEC, foi muito bom ouvir um cliente, nos organizarmos e trabalharmos juntos para satisfazer a demanda. 
+Após a conclusão e a estabilização da gestão do comitê local, queremos que o projeto vá para o ar a fim de servir aos interesses da comunidade intercambista local.
