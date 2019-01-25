@@ -16,6 +16,20 @@ No primeiro encontro, acertamos que as reuniões aconteceriam a cada 15 dias, en
 Foi proposto pelos voluntários do comitê Sorocabano que façamos um sistema para agilizar a comunicação entre
 os voluntários de Sorocaba e os intercâmbistas voluntários. Também era de interesse que existisse um site promocional, não ligado a instituição para que seja atrativos aos intercambistas virem até Sorocaba.
 
+#### Conteúdo do Sistema:
+
+##### BLOG
+* pontos turisticos da região
+* custo de vida
+* FAQ
+* compartilhamento de experiência
+* ONGs disponíveis em Sorocaba
+
+##### PAINEL
+* Login
+* CRUD de Intercambistas, ONGs, Terceiros (Hosts e Buddies) e Projeto
+* CRUD para o FAQ
+
 # Como executar o projeto?
 São necessários:
 - [Composer](https://getcomposer.org/) 
