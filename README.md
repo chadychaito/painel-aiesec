@@ -3,10 +3,10 @@
 Trabalho da disciplina de TI para Sustentabilidade.
 
 #### Integrantes:
-- Chady Chaito - [@ChadyChaito](https://github.com/chadychaito)
-- Gustavo da Silva Eda - [@EdaProgrammer](https://github.com/EdaProgrammer)
-- Renata Praisler - [@RenataPraisler](https://github.com/RenataPraisler)
-- Thiago Borges da Silva - [@bgsthiago](https://github.com/bgsthiago)
+- Chady Chaito - 613797 - [@ChadyChaito](https://github.com/chadychaito)
+- Gustavo da Silva Eda - 620114 - [@EdaProgrammer](https://github.com/EdaProgrammer)
+- Renata Praisler - 746044 - [@RenataPraisler](https://github.com/RenataPraisler)
+- Thiago Borges da Silva - 613770 - [@bgsthiago](https://github.com/bgsthiago)
 
 
 #### Sobre a aplicação e sua realização:
