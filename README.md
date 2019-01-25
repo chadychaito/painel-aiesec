@@ -25,7 +25,7 @@ São necessários:
 
 #### Cronograma:
 
-|Início |Atividade |Objetivo | Status|
+|Início |Atividade |
 | ----------------------------------|:----------:|
 |**(4/10)**|Primeira reunião - conhecer as demandas do comitê local.|
 |**(11/10)**|Segunda reunião - concretizar os requisitos.|
